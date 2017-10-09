@@ -1,0 +1,17 @@
+<h1>
+  {{title}}
+</h1>
+
+<table *ngIf="employees.length>0; else nodata">
+  <th>name</th>
+  <th>contact</th>
+  <th>address</th>
+  <tr *ngFor="let employee of employees | slice:0:2 as top2">
+    <td>{{employee.name}}</td>
+    <td>{{employee.contact}}</td>
+    <td>{{employee.address}}</td>
+  </tr>
+</table>
+<ng-template #nodata>
+  <h1>No employees</h1>
+</ng-template>
